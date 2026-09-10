@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Weather One</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <script type="module" crossorigin src="./assets/index-BO79jNTm.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-D59H5bbQ.css">
+</head>
+<body>
+    <div id="app"><div class="weather-app" id="weatherApp">
+  <div id="map" aria-label="Interactive weather map"></div>
+  <header class="topbar">
+    <button class="icon-btn" id="menuBtn" aria-label="Menu">☰</button>
+    <button class="location-block" id="locationBtn" aria-label="Change location">
+      <strong id="locationName">McAllen, TX</strong>
+      <small id="locationMeta">Loading local time…</small>
+    </button>
+    <button class="weather-pill" id="weatherBtn" aria-label="Weather details"><span id="weatherIcon">◌</span><span class="weather-copy"><span class="weather-main"><b id="weatherTemp">…</b><span class="weather-more">•••</span></span><small class="feels-like" id="feelsLike">Feels …</small><span class="weather-metrics"><small class="weather-metric" id="uvMetric">UV —</small><small class="weather-metric" id="windMetric">Wind —</small><small class="weather-metric" id="aqiMetric">AQI —</small></span></span></button>
+  </header>
+  <button class="alert-chip" id="alertChip"></button>
+  <div class="map-tools">
+    <button class="map-btn" id="layersBtn" aria-label="Layers" title="Layers"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"><path d="m12 3 8 5-8 5-8-5 8-5Z"/><path d="m4 12 8 5 8-5"/><path d="m4 16 8 5 8-5"/></svg></button>
+    <button class="map-btn" id="myLocationBtn" aria-label="My Location" title="My Location"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m20 4-7.8 16-2.1-6.1L4 11.8 20 4Z"/></svg></button>
+    <button class="map-btn" id="linksBtn" aria-label="Weather links" title="Weather links"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M10 13a5 5 0 0 0 7.1.1l2-2a5 5 0 0 0-7.1-7.1l-1.1 1.1"/><path d="M14 11a5 5 0 0 0-7.1-.1l-2 2A5 5 0 0 0 12 20l1.1-1.1"/></svg></button>
+    <button class="map-btn" id="recenterBtn" aria-label="Recenter" title="Recenter"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="2"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg></button>
+  </div>
+  <section class="radarbar">
+    <button class="play-btn" id="playBtn" aria-label="Play radar">▶</button>
+    <div class="timeline"><div class="timeline-top"><b id="frameTime">Loading radar…</b><span>Now</span></div><input id="radarSlider" type="range" min="0" max="0" value="0" aria-label="Radar timeline"><div class="timeline-foot"><span id="radarStart">--</span><span>Last 2 hours</span><span id="radarEnd">--</span></div></div>
+    <button class="mini-btn" id="refreshBtn" aria-label="Refresh">↻</button>
+  </section>
+  <div class="backdrop" id="backdrop"></div>
+  <section class="sheet" id="locationSheet"><div class="grabber"></div><div class="sheet-head"><h2>Location</h2><button data-close>×</button></div><p>Enter a U.S. ZIP code. The marker, map, weather and alerts update together.</p><form id="zipForm" class="zip-form"><input id="zipInput" aria-label="U.S. ZIP code" inputmode="numeric" maxlength="5" autocomplete="postal-code" placeholder="ZIP Code, e.g. 78504"><button type="submit">Go</button></form><button class="wide-btn" id="sheetLocationBtn" type="button">Use My Location</button><div class="message" id="zipMessage" role="status" aria-live="polite"></div></section>
+  <section class="sheet" id="layersSheet"><div class="grabber"></div><div class="sheet-head"><h2>Layers</h2><button data-close>×</button></div>
+    <label class="layer-row"><span><b>Radar</b><small>RainViewer • approx. previous 2 hours</small></span><span><em id="radarStatus">Loading</em><input id="radarToggle" type="checkbox" checked></span></label>
+    <label class="layer-row"><span><b>Warnings</b><small>National Weather Service polygons</small></span><span><em id="alertStatus">Loading</em><input id="alertToggle" type="checkbox" checked></span></label>
+    <label class="layer-row"><span><b>Tropical</b><small>NOAA/NHC enhanced track, cone & wind field</small></span><span><em id="tropStatus">Loading</em><input id="tropToggle" type="checkbox" checked></span></label>
+    <label class="layer-row"><span><b>Temperature</b><small>Open-Meteo current grid</small></span><span><em id="tempStatus">Ready</em><input id="tempToggle" type="checkbox"></span></label>
+    <label class="layer-row"><span><b>Wind</b><small>Open-Meteo direction and speed</small></span><span><em id="windStatus">Ready</em><input id="windToggle" type="checkbox"></span></label>
+    <div class="legend" id="tempLegend"><b>Temperature °F</b><div class="tempbar"></div><div><span>Cold</span><span>Mild</span><span>Hot</span></div></div><div class="legend" id="windLegend"><b>Wind mph</b><div class="windbar"></div><div><span>Light</span><span>Moderate</span><span>Strong</span></div></div>
+  </section>
+  <section class="sheet" id="alertsSheet"><div class="grabber"></div><div class="sheet-head"><h2>Active Alerts</h2><button data-close>×</button></div><div id="alertsList" class="empty">Loading alerts…</div></section>
+  <section class="sheet" id="alertDetailSheet"><div class="grabber"></div><div class="sheet-head"><h2 id="alertDetailTitle">Weather Alert</h2><button data-close>×</button></div><div id="alertDetailBody" class="alert-detail"></div></section>
+  <section class="sheet" id="tropicalSheet"><div class="grabber"></div><div class="sheet-head"><h2>Tropical Weather</h2><button data-close>×</button></div><div id="tropicalList" class="empty">Loading NOAA/NHC data…</div></section>
+  <section class="sheet" id="weatherSheet"><div class="grabber"></div><div class="sheet-head"><h2 id="weatherPlace">McAllen, TX</h2><button data-close>×</button></div><div id="weatherDetails">Loading weather…</div></section>
+  <section class="sheet" id="moreSheet"><div class="grabber"></div><div class="sheet-head"><h2>Weather One</h2><button data-close>×</button></div><button class="wide-btn" id="changeLocationBtn">Change Location / ZIP</button><button class="wide-btn" id="openAlertsBtn">Active Alerts</button><button class="wide-btn" id="openTropicalBtn">Tropical Weather</button><div class="diagnostics"><div><span>Radar</span><b id="diagRadar">Checking</b></div><div><span>Weather</span><b id="diagWeather">Checking</b></div><div><span>Alerts</span><b id="diagAlert">Checking</b></div><div><span>Tropical</span><b id="diagTrop">Checking</b></div></div></section>
+  <section class="sheet" id="linksSheet"><div class="grabber"></div><div class="sheet-head"><h2>Weather Links</h2><button data-close>×</button></div><a class="link-card" href="https://www.tropicaltidbits.com/" target="_blank" rel="noopener noreferrer"><span><b>Tropical Tidbits</b><small>Models, satellite and tropical analysis</small></span><strong>↗</strong></a><a class="link-card" href="https://www.trackthetropics.com/" target="_blank" rel="noopener noreferrer"><span><b>Track The Tropics</b><small>Tropical tracking and storm resources</small></span><strong>↗</strong></a><a class="link-card" href="https://www.wunderground.com/dashboard/pws/KTXMISSI37" target="_blank" rel="noopener noreferrer"><span><b>Weather Underground — KTXMISSI37</b><small>Personal weather station dashboard</small></span><strong>↗</strong></a></section>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</div></div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</body>
+</html>
