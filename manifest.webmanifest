@@ -1,12 +1,15 @@
 {
+  "id": "./",
   "name": "Weather One",
   "short_name": "Weather One",
-  "description": "Mobile-first weather radar, alerts, tropical tracking, UV, wind and air quality.",
+  "description": "Mobile-first NEXRAD radar, official weather alerts, tropical tracking, UV, wind and air quality.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
+  "orientation": "portrait-primary",
   "background_color": "#020914",
   "theme_color": "#06111d",
+  "categories": ["weather", "utilities"],
   "icons": [
     {
       "src": "./weather-one-icon.svg",
