@@ -164,3 +164,23 @@ html,body,#app{font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,
 .radar-frame{image-rendering:auto;backface-visibility:hidden;transform:translateZ(0)}
 .radar-smooth-mid .radar-frame{filter:blur(.22px) saturate(1.03) contrast(1.03)}
 .radar-smooth-high .radar-frame{filter:blur(.38px) saturate(1.04) contrast(1.04)}
+
+/* Weather pill readability: wider pill, larger secondary text; temperature size unchanged */
+.weather-pill{max-width:184px;min-width:176px;min-height:74px;padding:8px 12px;border-radius:27px;gap:8px}
+.weather-copy{flex:1}
+.weather-pill #weatherIcon{width:26px;height:26px;flex-basis:26px}
+.weather-glyph{width:24px;height:24px}
+.feels-like{font-size:11px;line-height:1.15;margin-top:3px;color:#d7e3eb}
+.weather-metrics{gap:7px;margin-top:5px;justify-content:flex-start}
+.weather-metric{font-size:9.5px;font-weight:800;letter-spacing:.005em}
+@media(max-width:390px){
+  .weather-pill{max-width:174px;min-width:168px;min-height:70px;padding:7px 10px;border-radius:25px;gap:7px}
+  .feels-like{font-size:10.5px}
+  .weather-metrics{gap:6px}
+  .weather-metric{font-size:9px}
+}
+@media(max-width:350px){
+  .weather-pill{max-width:162px;min-width:156px}
+  .feels-like{font-size:10px}
+  .weather-metric{font-size:8.5px}
+}
