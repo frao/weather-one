@@ -151,3 +151,7 @@ html,body,#app{font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,
   .play-btn svg{width:41px;height:41px}
   .speed-select{height:28px;min-width:44px;font-size:9px}
 }
+
+.tropical-imagery-note{margin:2px 0 10px;padding:8px 10px;border-radius:10px;background:#071722;border:1px solid #ffffff12;color:#a9bdcb;font-size:9px;font-weight:700;letter-spacing:.02em}
+.leaflet-tropicalSatellite-pane .leaflet-tile{filter:grayscale(.15) contrast(1.05) brightness(.9)}
+.leaflet-tropicalRadar-pane .leaflet-tile{filter:saturate(1.08) contrast(1.03)}
