@@ -128,3 +128,9 @@ html,body,#app{font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,
 .play-btn{width:60px;height:60px;border-radius:50%;box-shadow:0 5px 16px #0005}
 .play-btn svg{width:29px;height:29px}
 @media(max-width:390px){.radarbar{height:64px;grid-template-columns:58px 1fr 34px}.play-btn{width:58px;height:58px}.play-btn svg{width:28px;height:28px}}
+
+/* Larger primary radar control */
+.radarbar{height:76px;grid-template-columns:70px 1fr 38px;padding:3px 10px 3px 3px}
+.play-btn{width:70px;height:70px;border-radius:50%;box-shadow:0 6px 18px #0006}
+.play-btn svg{width:34px;height:34px}
+@media(max-width:390px){.radarbar{height:72px;grid-template-columns:66px 1fr 36px}.play-btn{width:66px;height:66px}.play-btn svg{width:32px;height:32px}}
