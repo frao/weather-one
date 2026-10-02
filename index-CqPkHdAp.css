@@ -134,3 +134,13 @@ html,body,#app{font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,
 .play-btn{width:70px;height:70px;border-radius:50%;box-shadow:0 6px 18px #0006}
 .play-btn svg{width:34px;height:34px}
 @media(max-width:390px){.radarbar{height:72px;grid-template-columns:66px 1fr 36px}.play-btn{width:66px;height:66px}.play-btn svg{width:32px;height:32px}}
+
+/* Radar layout correction from mobile review */
+.radar-legend{left:24px;right:24px;bottom:calc(78px + env(safe-area-inset-bottom));}
+.radarbar{left:16px;right:16px;bottom:calc(10px + env(safe-area-inset-bottom));height:60px;border-radius:30px;grid-template-columns:58px 1fr 34px;gap:7px;padding:1px 9px 1px 1px}
+.play-btn{width:58px;height:58px;border-radius:50%;box-shadow:0 5px 16px #0005}
+.play-btn svg{width:40px;height:40px}
+.mini-btn{width:32px;height:32px}
+.timeline-top{font-size:10px}
+.timeline-foot{font-size:8px}
+@media(max-width:390px){.radar-legend{left:16px;right:16px;bottom:calc(76px + env(safe-area-inset-bottom))}.radarbar{left:10px;right:10px;height:58px;grid-template-columns:56px 1fr 32px;padding:1px 8px 1px 1px}.play-btn{width:56px;height:56px}.play-btn svg{width:39px;height:39px}}
