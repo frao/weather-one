@@ -4,3 +4,5 @@
 button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid #8fd0ff;outline-offset:2px}
 @media(max-width:390px){.topbar{grid-template-columns:38px minmax(0,1fr) auto;gap:6px;padding-left:9px;padding-right:9px}.icon-btn{width:38px;height:38px}.location-block strong{font-size:20px}.location-block small{font-size:10px}.weather-pill{max-width:132px;min-height:54px;padding:5px 7px;gap:4px}.weather-pill #weatherIcon{font-size:17px}.weather-main b{font-size:21px}.weather-metrics{gap:4px}.weather-metric{font-size:7px}.map-tools{right:9px}.radarbar{left:9px;right:9px;grid-template-columns:48px 1fr 38px;padding-right:9px}.play-btn{width:48px;height:48px}.timeline-top{font-size:10px}.timeline-foot{font-size:8px}}
 @media(max-width:350px){.location-block strong{font-size:18px}.weather-pill{max-width:122px}.weather-metric{font-size:6.5px}.feels-like{font-size:8px}}
+
+.temperature-surface{filter:blur(2px) saturate(.82) contrast(.92);transform:translateZ(0)}
