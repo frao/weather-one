@@ -99,3 +99,18 @@ html,body,#app{font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,
 .list-skeleton i{height:62px}
 @keyframes skeletonMove{from{background-position:100% 0}to{background-position:-120% 0}}
 @media(prefers-reduced-motion:reduce){.weather-skeleton>i,.weather-skeleton div i,.list-skeleton i{animation:none}}
+
+/* Compact radar controls */
+.radar-legend{left:24px;right:24px;bottom:calc(79px + env(safe-area-inset-bottom));padding:6px 9px 5px;border-radius:11px;background:#0a1a27c9;border-color:#ffffff20;box-shadow:0 5px 14px #0003}
+.radar-legend-title{font-size:9px;letter-spacing:.06em;color:#d7e5ee;margin-bottom:4px}
+.radar-ramp{height:6px}
+.radar-legend-labels{margin-top:4px;font-size:8px;font-weight:700;color:#c0d0db}
+.radarbar{left:16px;right:16px;bottom:calc(10px + env(safe-area-inset-bottom));height:58px;border-radius:29px;grid-template-columns:44px 1fr 36px;gap:7px;padding:6px 10px 6px 6px}
+.play-btn{width:44px;height:44px;font-size:19px}
+.play-btn svg{width:21px;height:21px}
+.mini-btn{width:34px;height:34px;font-size:18px}
+.mini-btn svg{width:17px;height:17px}
+.timeline-top{font-size:10px}
+.timeline-foot{font-size:8px}
+#radarSlider{margin:0}
+@media(max-width:390px){.radar-legend{left:16px;right:16px;bottom:calc(77px + env(safe-area-inset-bottom));padding:5px 8px}.radar-legend-title{font-size:9px}.radar-legend-labels{font-size:7.5px}.radarbar{left:10px;right:10px;height:56px;grid-template-columns:42px 1fr 34px}.play-btn{width:42px;height:42px}.mini-btn{width:32px;height:32px}}
