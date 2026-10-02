@@ -28,3 +28,64 @@ button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid #8fd0
 .tropical-key{padding:7px 8px;border-radius:10px;background:#07131f80;border:1px solid #ffffff0d}
 @keyframes stormPulse{0%,100%{box-shadow:0 0 0 2px #ffffffd9,0 0 0 5px #07152299,0 5px 14px #0008}50%{box-shadow:0 0 0 2px #fff,0 0 0 8px #ffffff18,0 5px 14px #0008}}
 @media(prefers-reduced-motion:reduce){.current-storm-marker{animation:none}}
+
+/* Weather One professional UI refinement */
+:root{--surface:#071522;--surface-2:#0a1d2d;--surface-3:#0d2638;--hairline:#ffffff16;--shadow:0 12px 32px #0005}
+html,body,#app{font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}
+.topbar{padding-top:calc(10px + env(safe-area-inset-top));gap:7px}
+.location-block strong{font-weight:780;letter-spacing:-.025em}
+.location-block small{font-weight:600;letter-spacing:.01em}
+.weather-pill{border-color:#ffffff1f;background:#061421e8;box-shadow:0 8px 24px #0004}
+.weather-main b{font-weight:820;letter-spacing:-.035em}
+.weather-metrics{opacity:.92}
+.icon-btn,.map-btn,.mini-btn,.play-btn{transition:transform .14s ease,background .14s ease,border-color .14s ease,box-shadow .14s ease}
+.icon-btn:active,.map-btn:active,.mini-btn:active,.play-btn:active{transform:scale(.92)}
+.map-btn:hover,.map-btn:focus-visible{background:#0b2234;border-color:#7fc5ff66}
+.map-btn:has(svg){box-shadow:0 5px 18px #0003}
+.sheet{border-color:#ffffff14;background:linear-gradient(180deg,#081827fa,#06121efa);box-shadow:0 -18px 50px #0007;padding:8px 16px calc(16px + env(safe-area-inset-bottom));scrollbar-width:none}
+.sheet::-webkit-scrollbar{display:none}
+.sheet.show{animation:sheetIn .22s cubic-bezier(.2,.8,.2,1)}
+.sheet-head{position:sticky;top:-8px;z-index:2;padding:4px 0 8px;background:linear-gradient(180deg,#081827 74%,transparent)}
+.sheet-head h2{font-size:20px;font-weight:800;letter-spacing:-.02em}
+.sheet-head button{background:#102538;border:1px solid #ffffff12;transition:transform .14s ease,background .14s ease}
+.sheet-head button:active{transform:scale(.9)}
+.grabber{background:#6f8798;width:38px}
+.wide-btn{height:46px;background:#0a2031;border-color:#ffffff14;transition:background .14s ease,transform .14s ease,border-color .14s ease}
+.wide-btn:active{transform:scale(.985)}
+.menu-action{display:flex;align-items:center;justify-content:flex-start;gap:11px;padding:0 14px;text-align:left}
+.menu-action svg{width:20px;height:20px;flex:0 0 20px;color:#8fd0ff}
+.menu-action span{font-size:13px;font-weight:750}
+.layer-row{min-height:62px;border-bottom-color:#ffffff0f}
+.layer-row b{font-weight:760}
+.layer-row em{position:relative;padding-left:17px;background:#0c293e;border:1px solid #ffffff0d}
+.layer-row em:before{content:"";position:absolute;left:7px;top:50%;width:5px;height:5px;border-radius:50%;background:#74c8ff;transform:translateY(-50%);box-shadow:0 0 0 3px #74c8ff18}
+.alert-chip{display:none;align-items:center;gap:7px;min-height:34px;padding:7px 12px;border:1px solid #00000012;box-shadow:0 7px 20px #0005;letter-spacing:-.01em}
+.alert-chip.show{display:flex}
+.alert-chip:before{content:"";width:15px;height:15px;flex:0 0 15px;background:currentColor;clip-path:polygon(50% 0,100% 92%,0 92%);opacity:.78}
+.alert-chip:after{content:"!";position:absolute;left:23px;top:10px;font-size:9px;font-weight:950;color:inherit}
+.weather-detail-temp{font-size:48px;font-weight:850;letter-spacing:-.055em}
+.weather-detail-condition{font-weight:720}
+#weatherDetails{padding-top:4px}
+.weather-detail-grid{gap:9px;margin-top:14px}
+.weather-detail-card{background:linear-gradient(180deg,#0b2132,#081827);border-color:#ffffff12;padding:11px 12px;box-shadow:inset 0 1px #ffffff08}
+.weather-detail-card small{font-size:8px;letter-spacing:.08em}
+.weather-detail-card b{font-size:14px}
+.alert-detail-grid>div,.alert-detail-section{background:linear-gradient(180deg,#0b2132,#081827);border:1px solid #ffffff0e}
+.link-card{background:linear-gradient(180deg,#0b2132,#081827);border-color:#ffffff12;transition:transform .14s ease,border-color .14s ease}
+.link-card:active{transform:scale(.985)}
+.link-card strong svg{width:18px;height:18px;color:#8fd0ff}
+.diagnostics div{background:#081927;border:1px solid #ffffff0c}
+.radarbar{height:68px;border-color:#ffffff1a;background:#061421ef;box-shadow:0 10px 28px #0005}
+.leaflet-tile-pane img{transition:opacity .18s linear}
+.radar-legend{position:absolute;z-index:905;left:20px;right:20px;bottom:calc(88px + env(safe-area-inset-bottom));padding:7px 10px 6px;border-radius:12px;background:#061421e8;border:1px solid #ffffff18;box-shadow:0 6px 18px #0004;backdrop-filter:blur(10px);transition:opacity .18s ease,transform .18s ease}
+.radar-legend.off{opacity:.38;transform:translateY(3px)}
+.radar-legend-title{display:block;font-size:8px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#b9cbd7;margin-bottom:4px}
+.radar-ramp{height:7px;display:grid;grid-template-columns:repeat(6,1fr);overflow:hidden;border-radius:6px}
+.radar-ramp i:nth-child(1){background:#3aa655}.radar-ramp i:nth-child(2){background:#87d244}.radar-ramp i:nth-child(3){background:#f2de35}.radar-ramp i:nth-child(4){background:#f89a2f}.radar-ramp i:nth-child(5){background:#e84b3c}.radar-ramp i:nth-child(6){background:#b95ac8}
+.radar-legend-labels{display:flex;justify-content:space-between;gap:8px;margin-top:3px;font-size:7px;color:#9fb2c1}
+.toast{font-weight:700}
+@keyframes sheetIn{from{transform:translateY(18px);opacity:.55}to{transform:translateY(0);opacity:1}}
+@keyframes softPulse{0%,100%{opacity:.5}50%{opacity:1}}
+.empty:has(+*){animation:softPulse 1.2s ease-in-out infinite}
+@media(max-width:390px){.radar-legend{left:14px;right:14px}.weather-detail-temp{font-size:44px}.sheet{left:6px;right:6px}}
+@media(prefers-reduced-motion:reduce){.sheet.show{animation:none}.icon-btn,.map-btn,.mini-btn,.play-btn,.wide-btn,.link-card,.leaflet-tile-pane img{transition:none}}
