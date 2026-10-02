@@ -4,7 +4,7 @@ Weather One is a mobile-first static weather web app published with GitHub Pages
 
 ## Live data sources
 
-- **Radar:** NOAA/NWS MRMS base reflectivity time imagery is the primary radar, using 5-minute frames and an approximately two-hour timeline. IEM NEXRAD N0Q is the first automatic fallback, with RainViewer retained as a secondary fallback.
+- **Radar:** Iowa Environmental Mesonet (IEM) NEXRAD N0Q is the primary radar, using 5-minute frames and an approximately two-hour timeline. Playback uses buffered frame swapping to reduce flicker. RainViewer is retained as an automatic fallback.
 - **Weather:** Open-Meteo forecast/current weather.
 - **UV and air quality:** Open-Meteo Air Quality API.
 - **Official alerts:** National Weather Service API.
