@@ -100,49 +100,6 @@ html,body,#app{font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,
 @keyframes skeletonMove{from{background-position:100% 0}to{background-position:-120% 0}}
 @media(prefers-reduced-motion:reduce){.weather-skeleton>i,.weather-skeleton div i,.list-skeleton i{animation:none}}
 
-/* Compact radar controls */
-.radar-legend{left:24px;right:24px;bottom:calc(79px + env(safe-area-inset-bottom));padding:6px 9px 5px;border-radius:11px;background:#0a1a27c9;border-color:#ffffff20;box-shadow:0 5px 14px #0003}
-.radar-legend-title{font-size:9px;letter-spacing:.06em;color:#d7e5ee;margin-bottom:4px}
-.radar-ramp{height:6px}
-.radar-legend-labels{margin-top:4px;font-size:8px;font-weight:700;color:#c0d0db}
-.radarbar{left:16px;right:16px;bottom:calc(10px + env(safe-area-inset-bottom));height:58px;border-radius:29px;grid-template-columns:44px 1fr 36px;gap:7px;padding:6px 10px 6px 6px}
-.play-btn{width:44px;height:44px;font-size:19px}
-.play-btn svg{width:21px;height:21px}
-.mini-btn{width:34px;height:34px;font-size:18px}
-.mini-btn svg{width:17px;height:17px}
-.timeline-top{font-size:10px}
-.timeline-foot{font-size:8px}
-#radarSlider{margin:0}
-@media(max-width:390px){.radar-legend{left:16px;right:16px;bottom:calc(77px + env(safe-area-inset-bottom));padding:5px 8px}.radar-legend-title{font-size:9px}.radar-legend-labels{font-size:7.5px}.radarbar{left:10px;right:10px;height:56px;grid-template-columns:42px 1fr 34px}.play-btn{width:42px;height:42px}.mini-btn{width:32px;height:32px}}
-
-/* Smooth radar playback tuning */
-.radarbar{height:60px;grid-template-columns:52px 1fr 36px;padding:4px 10px 4px 4px}
-.play-btn{width:52px;height:52px;box-shadow:0 4px 14px #0004}
-.play-btn svg{width:25px;height:25px}
-.mini-btn{width:34px;height:34px}
-.leaflet-tile-pane .leaflet-tile{will-change:opacity,transform}
-@media(max-width:390px){.radarbar{height:58px;grid-template-columns:50px 1fr 34px}.play-btn{width:50px;height:50px}.play-btn svg{width:24px;height:24px}}
-
-/* Faster radar playback + larger primary control */
-.radarbar{height:66px;grid-template-columns:60px 1fr 36px;padding:3px 10px 3px 3px}
-.play-btn{width:60px;height:60px;border-radius:50%;box-shadow:0 5px 16px #0005}
-.play-btn svg{width:29px;height:29px}
-@media(max-width:390px){.radarbar{height:64px;grid-template-columns:58px 1fr 34px}.play-btn{width:58px;height:58px}.play-btn svg{width:28px;height:28px}}
-
-/* Larger primary radar control */
-.radarbar{height:76px;grid-template-columns:70px 1fr 38px;padding:3px 10px 3px 3px}
-.play-btn{width:70px;height:70px;border-radius:50%;box-shadow:0 6px 18px #0006}
-.play-btn svg{width:34px;height:34px}
-@media(max-width:390px){.radarbar{height:72px;grid-template-columns:66px 1fr 36px}.play-btn{width:66px;height:66px}.play-btn svg{width:32px;height:32px}}
-
-/* Mobile radar controls: compact bar, larger play glyph, clear gap below legend */
-.radar-legend{left:24px;right:24px;bottom:calc(80px + env(safe-area-inset-bottom));}
-.radarbar{left:16px;right:16px;bottom:calc(10px + env(safe-area-inset-bottom));height:60px;border-radius:30px;grid-template-columns:58px 1fr 34px;gap:7px;padding:1px 9px 1px 1px}
-.play-btn{width:58px;height:58px;border-radius:50%;box-shadow:0 5px 16px #0005}
-.play-btn svg{width:42px;height:42px}
-.mini-btn{width:32px;height:32px}
-@media(max-width:390px){.radar-legend{left:16px;right:16px;bottom:calc(78px + env(safe-area-inset-bottom))}.radarbar{left:10px;right:10px;height:58px;grid-template-columns:56px 1fr 32px;padding:1px 8px 1px 1px}.play-btn{width:56px;height:56px}.play-btn svg{width:41px;height:41px}}
-
 /* Final professional polish */
 .topbar{padding-left:16px;padding-right:16px;align-items:center}
 .location-block{min-width:0}
@@ -160,29 +117,37 @@ html,body,#app{font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,
 .weather-detail-temp{display:inline-block;padding:10px 14px 7px;border-radius:18px;background:linear-gradient(180deg,#0c2537,#081827);border:1px solid #ffffff14;box-shadow:0 7px 20px #0003}
 .weather-detail-feels{margin-top:8px;color:#c8d7e1}
 .weather-detail-condition{margin-top:3px;font-size:15px}
-.radarbar{left:16px;right:16px;height:60px;border-radius:30px;grid-template-columns:64px 1fr 47px 34px;gap:6px;padding:1px 9px 1px 5px;align-items:center}
-.play-slot{height:100%;display:flex;align-items:center;justify-content:center}
-.play-btn{width:56px;height:56px;display:grid;place-items:center;margin:0}
-.play-btn svg{width:41px;height:41px;display:block}
+
+/* Radar controls: one canonical definition */
+.radar-legend{left:24px;right:24px;bottom:calc(80px + env(safe-area-inset-bottom));padding:6px 9px 5px;border-radius:11px;background:#0a1a27c9;border-color:#ffffff20;box-shadow:0 5px 14px #0003;transition:opacity .18s ease,transform .18s ease,visibility .18s ease}
+.radar-legend-title{font-size:9px;letter-spacing:.06em;color:#d7e5ee;margin-bottom:4px}
+.radar-ramp{height:6px}
+.radar-legend-labels{margin-top:4px;font-size:8px;font-weight:700;color:#c0d0db}
+.radar-legend.playing{opacity:0;visibility:hidden;transform:translateY(5px);pointer-events:none}
+.radarbar{left:16px;right:16px;bottom:calc(10px + env(safe-area-inset-bottom));height:62px;border-radius:31px;grid-template-columns:68px 1fr 47px 34px;gap:6px;padding:2px 9px 2px 7px;align-items:center;border-color:#ffffff1a;background:#061421ef;box-shadow:0 10px 28px #0005}
+.radarbar.playing{box-shadow:0 8px 26px #0006,0 0 0 1px #58b8ff16}
+.play-slot{width:68px;height:100%;display:flex;align-items:center;justify-content:center}
+.play-btn{width:56px;height:56px;display:grid;place-items:center;margin:0 auto;border-radius:50%;box-shadow:0 5px 16px #0005}
+.play-btn svg{width:42px;height:42px;display:block}
+.mini-btn{width:32px;height:32px}
+.mini-btn svg{width:17px;height:17px}
+.timeline-top{font-size:10px}
+.timeline-foot{font-size:8px}
+#radarSlider{margin:0}
 .speed-select{height:30px;min-width:47px;padding:0 4px;border-radius:15px;border:1px solid #ffffff18;background:#0a2031;color:#dceaf3;font-size:10px;font-weight:800;text-align:center;outline:none}
 .speed-select:focus-visible{border-color:#8fd0ff;box-shadow:0 0 0 2px #8fd0ff22}
-.radar-legend{transition:opacity .18s ease,transform .18s ease,visibility .18s ease}
-.radar-legend.playing{opacity:0;visibility:hidden;transform:translateY(5px);pointer-events:none}
-.leaflet-tile{transition:opacity .14s linear!important}
-.radarbar.playing{box-shadow:0 8px 26px #0006,0 0 0 1px #58b8ff16}
+.leaflet-tile-pane .leaflet-tile{will-change:opacity,transform;transition:opacity .14s linear!important}
+
 @media(max-width:390px){
   .topbar{padding-left:12px;padding-right:12px}
   .location-block strong{font-size:26px}
   .weather-pill{min-height:70px;padding:7px 9px}
-  .radarbar{left:10px;right:10px;height:58px;grid-template-columns:61px 1fr 44px 32px;gap:5px;padding:1px 7px 1px 4px}
+  .radar-legend{left:16px;right:16px;bottom:calc(78px + env(safe-area-inset-bottom));padding:5px 8px}
+  .radar-legend-title{font-size:9px}
+  .radar-legend-labels{font-size:7.5px}
+  .radarbar{left:10px;right:10px;height:60px;grid-template-columns:64px 1fr 44px 32px;gap:5px;padding:2px 7px 2px 6px}
+  .play-slot{width:64px}
   .play-btn{width:54px;height:54px}
-  .play-btn svg{width:40px;height:40px}
+  .play-btn svg{width:41px;height:41px}
   .speed-select{height:28px;min-width:44px;font-size:9px}
 }
-
-/* Center primary radar play control within the bar */
-.radarbar{height:62px;grid-template-columns:68px 1fr 47px 34px;padding:2px 9px 2px 7px}
-.play-slot{width:68px;height:100%;display:flex;align-items:center;justify-content:center}
-.play-btn{width:56px;height:56px;margin:0 auto}
-.play-btn svg{width:42px;height:42px}
-@media(max-width:390px){.radarbar{height:60px;grid-template-columns:64px 1fr 44px 32px;padding:2px 7px 2px 6px}.play-slot{width:64px}.play-btn{width:54px;height:54px}.play-btn svg{width:41px;height:41px}}
