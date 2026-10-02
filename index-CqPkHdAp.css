@@ -89,3 +89,13 @@ html,body,#app{font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,
 .empty:has(+*){animation:softPulse 1.2s ease-in-out infinite}
 @media(max-width:390px){.radar-legend{left:14px;right:14px}.weather-detail-temp{font-size:44px}.sheet{left:6px;right:6px}}
 @media(prefers-reduced-motion:reduce){.sheet.show{animation:none}.icon-btn,.map-btn,.mini-btn,.play-btn,.wide-btn,.link-card,.leaflet-tile-pane img{transition:none}}
+
+.weather-skeleton>i,.weather-skeleton div i,.list-skeleton i{display:block;border-radius:10px;background:linear-gradient(90deg,#10283a 20%,#17384e 45%,#10283a 70%);background-size:220% 100%;animation:skeletonMove 1.25s linear infinite}
+.weather-skeleton>i:first-child{width:90px;height:48px;margin:8px 0 12px}
+.weather-skeleton>i:nth-child(2){width:145px;height:16px;margin-bottom:14px}
+.weather-skeleton div{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}
+.weather-skeleton div i{height:54px}
+.list-skeleton{display:grid;gap:9px;padding:12px 0}
+.list-skeleton i{height:62px}
+@keyframes skeletonMove{from{background-position:100% 0}to{background-position:-120% 0}}
+@media(prefers-reduced-motion:reduce){.weather-skeleton>i,.weather-skeleton div i,.list-skeleton i{animation:none}}
