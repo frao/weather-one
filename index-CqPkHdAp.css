@@ -122,3 +122,9 @@ html,body,#app{font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,
 .mini-btn{width:34px;height:34px}
 .leaflet-tile-pane .leaflet-tile{will-change:opacity,transform}
 @media(max-width:390px){.radarbar{height:58px;grid-template-columns:50px 1fr 34px}.play-btn{width:50px;height:50px}.play-btn svg{width:24px;height:24px}}
+
+/* Faster radar playback + larger primary control */
+.radarbar{height:66px;grid-template-columns:60px 1fr 36px;padding:3px 10px 3px 3px}
+.play-btn{width:60px;height:60px;border-radius:50%;box-shadow:0 5px 16px #0005}
+.play-btn svg{width:29px;height:29px}
+@media(max-width:390px){.radarbar{height:64px;grid-template-columns:58px 1fr 34px}.play-btn{width:58px;height:58px}.play-btn svg{width:28px;height:28px}}
