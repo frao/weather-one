@@ -6,3 +6,25 @@ button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid #8fd0
 @media(max-width:350px){.location-block strong{font-size:18px}.weather-pill{max-width:122px}.weather-metric{font-size:6.5px}.feels-like{font-size:8px}}
 
 .temperature-surface{filter:blur(2px) saturate(.82) contrast(.92);transform:translateZ(0)}
+
+/* Professional icon and tropical polish */
+.icon-btn svg,.map-btn svg,.mini-btn svg,.play-btn svg,.sheet-head button svg{width:20px;height:20px}
+.play-btn svg{width:24px;height:24px}
+.sheet-head button{display:grid;place-items:center}
+.weather-pill #weatherIcon{display:grid;place-items:center;width:24px;height:24px;flex:0 0 24px;margin-top:3px}
+.weather-glyph{width:22px;height:22px;color:#f7fbff;filter:drop-shadow(0 1px 3px #0008)}
+.current-storm-marker,.forecast-storm-marker{position:relative;display:grid;place-items:center;border-radius:50%;background:color-mix(in srgb,var(--storm) 88%,#071522);color:#fff;box-shadow:0 0 0 2px #ffffffd9,0 0 0 5px #07152299,0 5px 14px #0008}
+.current-storm-marker{animation:stormPulse 2.4s ease-in-out infinite}
+.current-storm-marker .cyclone-glyph{width:25px;height:25px}
+.forecast-storm-marker .cyclone-glyph{width:18px;height:18px;opacity:.92}
+.current-storm-marker span,.forecast-storm-marker span{position:absolute;right:-8px;bottom:-7px;min-width:20px;height:15px;padding:0 4px;border-radius:8px;background:#06111dee;border:1px solid #ffffff55;display:grid;place-items:center;font-size:8px;font-weight:900;line-height:1}
+.track-label{padding:3px 6px;border-radius:8px;background:#06111dc9;border:1px solid #ffffff20;color:#fff;font-size:9px;font-weight:800;text-shadow:none;box-shadow:0 2px 7px #0005}
+.storm-card{background:linear-gradient(180deg,#0b2132,#081827);border-color:#355873;box-shadow:0 8px 22px #0003}
+.storm-title{letter-spacing:.01em}
+.storm-type{color:#a9c0d0}
+.storm-stat{background:#07131f;border:1px solid #ffffff0d}
+.forecast-point-card{background:#07131f;border:1px solid #ffffff10}
+.storm-actions button{background:#0d3853;border-color:#3b7296}
+.tropical-key{padding:7px 8px;border-radius:10px;background:#07131f80;border:1px solid #ffffff0d}
+@keyframes stormPulse{0%,100%{box-shadow:0 0 0 2px #ffffffd9,0 0 0 5px #07152299,0 5px 14px #0008}50%{box-shadow:0 0 0 2px #fff,0 0 0 8px #ffffff18,0 5px 14px #0008}}
+@media(prefers-reduced-motion:reduce){.current-storm-marker{animation:none}}
