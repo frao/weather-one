@@ -8,7 +8,7 @@ Weather One is a mobile-first static weather web app published with GitHub Pages
 - **Weather:** Open-Meteo forecast/current weather.
 - **UV and air quality:** Open-Meteo Air Quality API.
 - **Official alerts:** National Weather Service API.
-- **Tropical:** NOAA/NHC track, cone, wind fields and watches/warnings, enhanced with RainViewer composite radar where coverage exists and NOAA nowCOAST/NESDIS GOES infrared imagery for offshore storm context.
+- **Tropical:** NOAA/NHC track, cone, wind fields and watches/warnings, enhanced with NOAA nowCOAST/NESDIS GOES infrared imagery for offshore storm context. The app keeps a single animated radar layer to avoid duplicate radar overlays.
 - **Basemap:** Esri World Imagery with reference/transportation layers.
 - **ZIP lookup:** Zippopotam with Nominatim fallback.
 
