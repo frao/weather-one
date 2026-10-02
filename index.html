@@ -10,8 +10,8 @@
     <link rel="manifest" href="./manifest.webmanifest">
     <link rel="icon" href="./weather-one-icon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-  <script type="module" crossorigin src="./index-DNDlda4d.js?v=20261002-5"></script>
-  <link rel="stylesheet" crossorigin href="./index-CqPkHdAp.css?v=20261002-5">
+  <script type="module" crossorigin src="./index-DNDlda4d.js?v=20261002-6"></script>
+  <link rel="stylesheet" crossorigin href="./index-CqPkHdAp.css?v=20261002-6">
 </head>
 <body>
     <div id="app"><div class="weather-app" id="weatherApp">
@@ -40,7 +40,7 @@
   <div class="backdrop" id="backdrop"></div>
   <section class="sheet" id="locationSheet"><div class="grabber"></div><div class="sheet-head"><h2>Location</h2><button data-close><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div><p>Enter a U.S. ZIP code. The marker, map, weather and alerts update together.</p><form id="zipForm" class="zip-form"><input id="zipInput" aria-label="U.S. ZIP code" inputmode="numeric" maxlength="5" autocomplete="postal-code" placeholder="ZIP Code, e.g. 78504"><button type="submit">Go</button></form><button class="wide-btn" id="sheetLocationBtn" type="button">Use My Location</button><div class="message" id="zipMessage" role="status" aria-live="polite"></div></section>
   <section class="sheet" id="layersSheet"><div class="grabber"></div><div class="sheet-head"><h2>Layers</h2><button data-close><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
-    <label class="layer-row"><span><b>Radar</b><small>IEM NEXRAD • 5-minute frames • approx. 2 hours</small></span><span><em id="radarStatus">Loading</em><input id="radarToggle" type="checkbox" checked></span></label>
+    <label class="layer-row"><span><b>Radar</b><small>NOAA MRMS • 5-minute frames • approx. 2 hours</small></span><span><em id="radarStatus">Loading</em><input id="radarToggle" type="checkbox" checked></span></label>
     <label class="layer-row"><span><b>Warnings</b><small>National Weather Service polygons</small></span><span><em id="alertStatus">Loading</em><input id="alertToggle" type="checkbox" checked></span></label>
     <label class="layer-row"><span><b>Tropical</b><small>NOAA/NHC enhanced track, cone & wind field</small></span><span><em id="tropStatus">Loading</em><input id="tropToggle" type="checkbox" checked></span></label>
     <label class="layer-row"><span><b>Temperature</b><small>Open-Meteo smooth interpolated field</small></span><span><em id="tempStatus">Ready</em><input id="tempToggle" type="checkbox"></span></label>
@@ -56,6 +56,6 @@
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 </div></div>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <script>if ('serviceWorker' in navigator) { window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js?v=20261002-5').catch(() => {})); }</script>
+    <script>if ('serviceWorker' in navigator) { window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js?v=20261002-6').catch(() => {})); }</script>
 </body>
 </html>
