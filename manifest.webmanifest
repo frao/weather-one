@@ -9,7 +9,10 @@
   "orientation": "portrait-primary",
   "background_color": "#020914",
   "theme_color": "#06111d",
-  "categories": ["weather", "utilities"],
+  "categories": [
+    "weather",
+    "utilities"
+  ],
   "icons": [
     {
       "src": "./weather-one-icon.svg",
@@ -17,5 +20,11 @@
       "type": "image/svg+xml",
       "purpose": "any maskable"
     }
-  ]
+  ],
+  "display_override": [
+    "standalone",
+    "minimal-ui"
+  ],
+  "prefer_related_applications": false,
+  "lang": "en-US"
 }
