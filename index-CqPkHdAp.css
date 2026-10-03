@@ -190,3 +190,7 @@ html,body,#app{font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,
 .radar-frame{filter:url(#radarXSoft)}
 .radar-smooth-mid .radar-frame{filter:url(#radarXSoftMid)}
 .radar-smooth-high .radar-frame{filter:url(#radarXSoftHigh)}
+
+/* LibreWXR already applies server-side smoothing; do not stack the older client radar filters. */
+.librewxr-radar{filter:none!important;image-rendering:auto!important}
+.radar-smooth-mid .librewxr-radar,.radar-smooth-high .librewxr-radar{filter:none!important}
