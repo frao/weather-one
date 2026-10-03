@@ -184,6 +184,3 @@ html,body,#app{font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,
   .feels-like{font-size:10px}
   .weather-metric{font-size:8.5px}
 }
-
-/* High-detail single-site radar remains crisp while the national mosaic keeps adaptive smoothing */
-.radar-smooth-mid .radar-local,.radar-smooth-high .radar-local{filter:saturate(1.05) contrast(1.06)}
