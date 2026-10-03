@@ -30,3 +30,5 @@ The site is deployed from the `main` branch through GitHub Pages. It is also ins
 - `weather-one-icon.svg`
 
 When changing JS/CSS, also bump the query-string asset version in `index.html` and the cache name/asset URLs in `sw.js` so installed PWA clients receive the update.
+
+- **High-zoom radar trial:** at zoom 10+, Weather One attempts to switch from the CONUS IEM mosaic to the nearest available IEM single-site NEXRAD N0B archive, with automatic fallback to the mosaic if the local source is unavailable.
