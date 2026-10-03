@@ -185,8 +185,8 @@ html,body,#app{font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,
   .weather-metric{font-size:8.5px}
 }
 
-/* Radar palette cleanup: suppress low-reflectivity blue/cyan while preserving green+ echoes */
+/* RadarX-style rendering trial: smooth cell edges without reintroducing blue/cyan echoes */
 .radar-filter-defs{position:absolute;width:0;height:0;overflow:hidden;pointer-events:none}
-.radar-frame{filter:url(#radarCleanBlue)}
-.radar-smooth-mid .radar-frame{filter:url(#radarCleanBlue) blur(.22px) saturate(1.03) contrast(1.03)}
-.radar-smooth-high .radar-frame{filter:url(#radarCleanBlue) blur(.38px) saturate(1.04) contrast(1.04)}
+.radar-frame{filter:url(#radarXSoft)}
+.radar-smooth-mid .radar-frame{filter:url(#radarXSoftMid)}
+.radar-smooth-high .radar-frame{filter:url(#radarXSoftHigh)}
