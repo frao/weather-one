@@ -164,3 +164,6 @@ html,body,#app{font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,
 .radar-frame{image-rendering:auto;backface-visibility:hidden;transform:translateZ(0)}
 .radar-smooth-mid .radar-frame{filter:blur(.22px) saturate(1.03) contrast(1.03)}
 .radar-smooth-high .radar-frame{filter:blur(.38px) saturate(1.04) contrast(1.04)}
+
+/* High-detail local radar should stay crisp; smoothing remains for the national mosaic */
+.radar-smooth-mid .radar-local,.radar-smooth-high .radar-local{filter:saturate(1.05) contrast(1.06)}
