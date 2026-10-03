@@ -160,10 +160,10 @@ html,body,#app{font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,
 .radar-legend-labels{font-size:9.5px;font-weight:750;line-height:1.15}
 @media(max-width:390px){.radar-legend-labels{font-size:9px}}
 
-/* Adaptive radar smoothing trial: stronger interpolation at higher zoom while preserving edge contrast */
+/* Adaptive radar smoothing at high zoom: reduces visible raster blockiness without inventing detail */
 .radar-frame{image-rendering:auto;backface-visibility:hidden;transform:translateZ(0)}
-.radar-smooth-mid .radar-frame{filter:blur(.34px) saturate(1.04) contrast(1.06)}
-.radar-smooth-high .radar-frame{filter:blur(.62px) saturate(1.05) contrast(1.09)}
+.radar-smooth-mid .radar-frame{filter:blur(.22px) saturate(1.03) contrast(1.03)}
+.radar-smooth-high .radar-frame{filter:blur(.38px) saturate(1.04) contrast(1.04)}
 
 /* Weather pill readability: wider pill, larger secondary text; temperature size unchanged */
 .weather-pill{max-width:184px;min-width:176px;min-height:74px;padding:8px 12px;border-radius:27px;gap:8px}
